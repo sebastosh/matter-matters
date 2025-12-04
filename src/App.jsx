@@ -1,42 +1,38 @@
 // import { useState } from 'react'
-import './assets/style.css'
-import riderData from './data/riderData.json'
-import RiderSection from './components/riderSection';
-import Exhibition from './components/exhibition'
-import Signatories from './components/signatories'
+import "./assets/style.css";
+import Choices from "./components/choices";
+import Exhibition from "./components/exhibition";
+import Signatories from "./components/signatories";
 
 function App() {
-    
   return (
     <>
- <h1>
-        <strong>MATTER MATTERS:</strong> RIDER FOR EXHIBITION AGREEMENTS
-      </h1>
-      <div>
-This is an exhibition agreement supplement for those of us who reckon with art and want coherence between
-our concern - regarding climate disruption and the megaflop of plastics-reliance and how we live among other
-sentient beings whose lives we do not think are less worthy of attention than our own - and how we actually
-go about things. They are mores, not lesses; while they are limitations, they are not restrictive. In fact,we
-consider them beautiful — a hedonic ethos. We aim to commit to them in a spirit of friendly disagreeableness:
-a friendly disagreeableness with the general customs and assumptions, within the mainstream of cultural
-production, of what is necessary to make/meet art today.
-      </div>
+      <header>
+        <h1>
+          <strong>MATTER MATTERS:</strong> RIDER FOR EXHIBITION AGREEMENTS
+        </h1>
+        <p>
+          This is an exhibition agreement supplement for those of us who reckon
+          with art and want coherence between our concern - regarding climate
+          disruption and the megaflop of plastics-reliance and how we live among
+          other sentient beings whose lives we do not think are less worthy of
+          attention than our own - and how we actually go about things. They are
+          mores, not lesses; while they are limitations, they are not
+          restrictive. In fact,we consider them beautiful — a hedonic ethos. We
+          aim to commit to them in a spirit of friendly disagreeableness: a
+          friendly disagreeableness with the general customs and assumptions,
+          within the mainstream of cultural production, of what is necessary to
+          make/meet art today.
+        </p>
+      </header>
 
-            <div className="rider">
-        {riderData.map((rider, index) => {
-          return (
-            <RiderSection
-              key={index}
-              title={rider.title}
-              active={rider.active}
-              description={rider.description}
-              items={rider.items}
-            />
-          );
-        })}
-      </div>
+      <form>
+        <Choices />
+        <Exhibition />
+        <Signatories />
+      </form>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

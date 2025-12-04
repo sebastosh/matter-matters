@@ -1,15 +1,15 @@
 import RiderSingleItem from "./ridersingleitem";
 
-export default function RiderItems(items, title) {
-
+export default function RiderItems({ items, title }) {
   return (
     <div className="rider-items">
-      {title === "OPENING" ? null : <li>Therefore,</li>}
+      {title === "OPENING" ? null : "Therefore,"}
 
-      {items.items.map((item, index) => {
+      {items.map((item, index) => {
         return (
           <RiderSingleItem
             key={index}
+            id={index}
             item={item.item}
             checked={item.checked}
           />

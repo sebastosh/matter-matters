@@ -9,8 +9,7 @@
   margin: 0 auto;
 }
 
-.rider {
-  margin: 1em;
+.section-container {
   column-count: 2;
 }
 
@@ -20,17 +19,9 @@ section {
   display: inline-block;
 }
 
-section ul {
-  text-align: left;
-  padding: 0.5rem;
-}
-
-section li {
-  list-style-type: none;
-}
-
 .rider-items {
-  text-align: left;
+  display: flex;
+  flex-direction: column;
 }
 
 .checkbox > input {
@@ -43,6 +34,7 @@ section li {
 
 .not-checked {
   text-decoration: line-through;
+  text-decoration-thickness: from-font;
 }
 
 .exhibition {

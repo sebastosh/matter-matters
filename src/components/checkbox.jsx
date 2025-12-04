@@ -1,14 +1,12 @@
-const Checkbox = ({ checked, onChange }) => {
-
-
+const Checkbox = ({ id, checked, onChange }) => {
   return (
-
-      <input
-        type="checkbox"
-        checked={checked}
-        onChange={onChange}
-      />
-
+    <input
+      name={id}
+      id={id}
+      type="checkbox"
+      checked={checked}
+      onChange={onChange}
+    />
   );
 };
 
