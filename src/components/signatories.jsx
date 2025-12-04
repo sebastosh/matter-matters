@@ -1,35 +1,50 @@
-import { useState } from 'react';
-
+import { useState } from "react";
 
 const Signatories = () => {
   const [signers, setSigners] = useState([
-    { signerName: '', signerTitle: '' },
-    { signerName: '', signerTitle: '' }
+    { signerName: "", signerTitle: "" },
+    { signerName: "", signerTitle: "" },
   ]);
 
-  const addSigner = () => {
+
+    // New state to keep track of the number of field sets
+  const [numFieldSets, setNumFieldSets] = useState(signers.length);
+
+  // Function to add a new field set
+  const handleAddSigner = (event) => {
+    event.preventDefault();
+    setNumFieldSets(numFieldSets + 1);
+    setSigners([...signers, { signerName: "", signerTitle: "" }]);
+  };
+
+    // Function to remove a field set using the index
+  const handleRemoveSigner = (event, index) => {
+
+        event.preventDefault();
     const newSigners = [...signers];
-    newSigners.push({ signerName: '', signerTitle: '' });
+    newSigners.splice(index, 1);
     setSigners(newSigners);
   };
 
   const handleChange = (event, index) => {
-    console.log("🚀 ~ handleChange ~ event, index:", event, index)
     const { value } = event.target;
     const newSigners = [...signers];
-    newSigners[index].signerName = value;
-    setSigners(newSigners);
-    console.log('Updated signers:', signers); // Log the updated state for debugging
+    if (event.target.name === "signerName") {
+      newSigners[index].signerName = value;
+      setSigners(newSigners);
+    } else if (event.target.name === "signerTitle") {
+      newSigners[index].signerTitle = value;
+      setSigners(newSigners);
+    }
   };
 
   return (
     <>
       <h3>
-        <strong>SIGNATORIES</strong> (artist/s, curator, gallerist,
-          preparator, etc.)
+        <strong>SIGNATORIES</strong> (artist/s, curator, gallerist, preparator,
+        etc.)
       </h3>
-      <div>You are invited to co-half/half-sign this document. The more signatories the easier it becomes to follow the guidelines and the clearer our collective conscience becomes. It can be signed in perpetuity or for a particular exhibition. (If working with an artist/gallery/institution that has not signed they can be temporary co-signatories for the specific exhibition in question. To formalise the commitment to lessen our un-helpful effects is helpful in its clarifying explicitness.)</div>
-      <button onClick={addSigner}>Add Signatory</button>
+      <div>You are invited to co-half/half-sign this document. ...</div>
       <div className="signatories">
         {signers.map((signer, index) => (
           <div key={index} className="signer">
@@ -47,14 +62,13 @@ const Signatories = () => {
               name="signerTitle"
               placeholder="Title"
             />
+                        {/* Remove button for each field set */}
+            <button onClick={(e) => handleRemoveSigner(e, index)}>Remove</button>
           </div>
-
-        
-
-
-
         ))}
       </div>
+            {/* Button to add a new field set */}
+      <button onClick={handleAddSigner}>Add Signatory</button>
     </>
   );
 };
