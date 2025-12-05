@@ -26,11 +26,11 @@ export default function Exhibition() {
   };
 
   return (
-    <div>
+      <div className="exhibition">
       <h3>
         <strong>EXHIBITION</strong> (title, place, dates)
       </h3>
-      <div className="exhibition">
+
         <div className="exhibition-field">
           <label>
             Exhibition Title{" "}
@@ -79,7 +79,7 @@ export default function Exhibition() {
             </label>
           </div>
         </div>
-      </div>
+
     </div>
   );
 }

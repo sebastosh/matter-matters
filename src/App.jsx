@@ -5,6 +5,13 @@ import Exhibition from "./components/exhibition";
 import Signatories from "./components/signatories";
 
 function App() {
+
+
+  const handlePrint = () => {
+    window.print();
+  };
+
+  
   return (
     <>
       <header>
@@ -28,9 +35,11 @@ function App() {
 
       <form>
         <Choices />
+        <div className="page-break"></div>
         <Exhibition />
         <Signatories />
       </form>
+       <button className="print" onClick={handlePrint}>Print</button>
     </>
   );
 }

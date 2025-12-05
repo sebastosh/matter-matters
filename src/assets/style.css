@@ -100,7 +100,28 @@ section {
 }
 
 @media print {
+  @page {
+    size: auto;
+    /* Portrait or Landscape */
+    margin: 0mm;
+    /* Reset default margin */
+  }
+
+  /* Define additional print styles */
+  body {
+    margin: 1em;
+    /* Reset body margin */
+  }
+
+   .page, .page-break {page-break-before:always; }
+
   input[type='checkbox'] {
     display: none;
   }
+
+  .print {
+    visibility: hidden;
+  }
+
+
 }

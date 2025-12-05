@@ -39,13 +39,13 @@ const Signatories = () => {
   };
 
   return (
-    <>
+          <div className="signatories">
       <h3>
         <strong>SIGNATORIES</strong> (artist/s, curator, gallerist, preparator,
         etc.)
       </h3>
       <div>You are invited to co-half/half-sign this document. ...</div>
-      <div className="signatories">
+
         {signers.map((signer, index) => (
           <div key={index} className="signer">
             <input
@@ -66,10 +66,10 @@ const Signatories = () => {
             <button onClick={(e) => handleRemoveSigner(e, index)}>Remove</button>
           </div>
         ))}
-      </div>
+
             {/* Button to add a new field set */}
       <button onClick={handleAddSigner}>Add Signatory</button>
-    </>
+    </div>
   );
 };
 
