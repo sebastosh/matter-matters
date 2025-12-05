@@ -18,7 +18,7 @@ function App() {
         <h1>
           <strong>MATTER MATTERS:</strong> RIDER FOR EXHIBITION AGREEMENTS
         </h1>
-        <p>
+        <p className="description">
           This is an exhibition agreement supplement for those of us who reckon
           with art and want coherence between our concern - regarding climate
           disruption and the megaflop of plastics-reliance and how we live among

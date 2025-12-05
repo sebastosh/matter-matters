@@ -63,12 +63,12 @@ const Signatories = () => {
               placeholder="Title"
             />
                         {/* Remove button for each field set */}
-            <button onClick={(e) => handleRemoveSigner(e, index)}>Remove</button>
+            <button className="remove" onClick={(e) => handleRemoveSigner(e, index)}>Remove</button>
           </div>
         ))}
 
             {/* Button to add a new field set */}
-      <button onClick={handleAddSigner}>Add Signatory</button>
+      <button className="add" onClick={handleAddSigner}>Add Signatory</button>
     </div>
   );
 };

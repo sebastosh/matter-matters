@@ -115,11 +115,12 @@ section {
 
    .page, .page-break {page-break-before:always; }
 
+
   input[type='checkbox'] {
     display: none;
   }
 
-  .print {
+  .print, .add, .remove, .description {
     visibility: hidden;
   }
 
